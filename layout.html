@@ -1,0 +1,267 @@
+<head>
+<title>FFV Job Tracker</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+@font-face {
+  font-family: 'Custom Font';
+  src: url('font.ttf');
+}
+
+.flex {
+display: flex;
+}
+
+#menu {
+display: flex;
+flex-direction: column;
+height: 410px;
+width: 200px;
+background-color: gray;
+justify-content: space-around;
+align-items: center;
+}
+
+#display {
+height: 410px;
+width: 499px;
+background-color: black;
+display: flex;
+flex-wrap: wrap;
+}
+
+.class-menu {
+width: 80%;
+}
+
+.class-slot {
+height: 50%;
+width: 50%;
+display: flex;
+flex-direction: column;
+}
+
+/*
+#water-job {
+background-color: blue;
+}
+
+#wind-job {
+background-color: green;
+}
+
+#fire-job {
+background-color: red;
+}
+
+#earth-job {
+background-color: yellow;
+}
+*/
+
+.class-image {
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.class-text {
+  height: 25%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Custom Font";
+  font-size: 200%;
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.job-icon {
+padding-top: 20px;
+margin-right: 8px;
+margin-left: 4px;
+}
+</style>
+
+    
+<body>
+<div class="flex">
+
+<div id="menu">
+<select class="class-menu" id="class-menu-wind">
+  <option value="locked">LOCKED</option>
+  <option value="freelancer">Freelancer</option>
+  <option value="knight">Knight</option>
+  <option value="monk">Monk</option>
+  <option value="thief">Thief</option>
+  <option value="white-mage">White Mage</option>
+  <option value="black-mage">Black Mage</option>
+  <option value="blue-mage">Blue Mage</option>
+  <option value="berserker">Berserker</option>
+  <option value="mystic-knight">Mystic Knight</option>
+  <option value="time-mage">Time Mage</option>
+  <option value="summoner">Summoner</option>
+  <option value="red-mage">Red Mage</option>
+  <option value="ninja">Ninja</option>
+  <option value="beastmaster">Beastmaster</option>
+  <option value="geomancer">Geomancer</option>
+  <option value="ranger">Ranger</option>
+  <option value="bard">Bard</option>
+  <option value="dragoon">Dragoon</option>
+  <option value="samurai">Samurai</option>
+  <option value="chemist">Chemist</option>
+  <option value="dancer">Dancer</option>
+  <option value="mime">Mime</option>  
+</select>
+
+<select class="class-menu" id="class-menu-water">
+  <option value="locked">LOCKED</option>
+  <option value="freelancer">Freelancer</option>
+  <option value="knight">Knight</option>
+  <option value="monk">Monk</option>
+  <option value="thief">Thief</option>
+  <option value="white-mage">White Mage</option>
+  <option value="black-mage">Black Mage</option>
+  <option value="blue-mage">Blue Mage</option>
+  <option value="berserker">Berserker</option>
+  <option value="mystic-knight">Mystic Knight</option>
+  <option value="time-mage">Time Mage</option>
+  <option value="summoner">Summoner</option>
+  <option value="red-mage">Red Mage</option>
+  <option value="ninja">Ninja</option>
+  <option value="beastmaster">Beastmaster</option>
+  <option value="geomancer">Geomancer</option>
+  <option value="ranger">Ranger</option>
+  <option value="bard">Bard</option>
+  <option value="dragoon">Dragoon</option>
+  <option value="samurai">Samurai</option>
+  <option value="chemist">Chemist</option>
+  <option value="dancer">Dancer</option>
+  <option value="mime">Mime</option>  
+</select>
+
+<select class="class-menu" id="class-menu-fire">
+  <option value="locked">LOCKED</option>
+  <option value="freelancer">Freelancer</option>
+  <option value="knight">Knight</option>
+  <option value="monk">Monk</option>
+  <option value="thief">Thief</option>
+  <option value="white-mage">White Mage</option>
+  <option value="black-mage">Black Mage</option>
+  <option value="blue-mage">Blue Mage</option>
+  <option value="berserker">Berserker</option>
+  <option value="mystic-knight">Mystic Knight</option>
+  <option value="time-mage">Time Mage</option>
+  <option value="summoner">Summoner</option>
+  <option value="red-mage">Red Mage</option>
+  <option value="ninja">Ninja</option>
+  <option value="beastmaster">Beastmaster</option>
+  <option value="geomancer">Geomancer</option>
+  <option value="ranger">Ranger</option>
+  <option value="bard">Bard</option>
+  <option value="dragoon">Dragoon</option>
+  <option value="samurai">Samurai</option>
+  <option value="chemist">Chemist</option>
+  <option value="dancer">Dancer</option>
+  <option value="mime">Mime</option>  
+</select>
+
+<select class="class-menu" id="class-menu-earth">
+  <option value="locked">LOCKED</option>
+  <option value="freelancer">Freelancer</option>
+  <option value="knight">Knight</option>
+  <option value="monk">Monk</option>
+  <option value="thief">Thief</option>
+  <option value="white-mage">White Mage</option>
+  <option value="black-mage">Black Mage</option>
+  <option value="blue-mage">Blue Mage</option>
+  <option value="berserker">Berserker</option>
+  <option value="mystic-knight">Mystic Knight</option>
+  <option value="time-mage">Time Mage</option>
+  <option value="summoner">Summoner</option>
+  <option value="red-mage">Red Mage</option>
+  <option value="ninja">Ninja</option>
+  <option value="beastmaster">Beastmaster</option>
+  <option value="geomancer">Geomancer</option>
+  <option value="ranger">Ranger</option>
+  <option value="bard">Bard</option>
+  <option value="dragoon">Dragoon</option>
+  <option value="samurai">Samurai</option>
+  <option value="chemist">Chemist</option>
+  <option value="dancer">Dancer</option>
+  <option value="mime">Mime</option>  
+</select>
+</div>
+
+<div id="display">
+
+<div class="class-slot" id="wind-job">
+<div class="class-image" id="wind-job-img"></div>
+<div class="class-text" id="wind-job-text">LOCKED</div>
+</div>
+
+<div class="class-slot" id="water-job">
+<div class="class-image" id="water-job-img"></div>
+<div class="class-text" id="water-job-text">LOCKED</div>
+</div>
+
+<div class="class-slot" id="fire-job">
+<div class="class-image" id="fire-job-img"></div>
+<div class="class-text" id="fire-job-text">LOCKED</div>
+</div>
+
+<div class="class-slot" id="earth-job">
+<div class="class-image" id="earth-job-img"></div>
+<div class="class-text" id="earth-job-text">LOCKED</div>
+</div>
+
+</div>
+
+</div>
+</body>
+<script>
+
+document.getElementById("class-menu-wind").onchange = function() {myFunction()};
+document.getElementById("class-menu-water").onchange = function() {myFunction2()};
+document.getElementById("class-menu-fire").onchange = function() {myFunction3()};
+document.getElementById("class-menu-earth").onchange = function() {myFunction4()};
+
+function myFunction() {
+  var e = document.getElementById("class-menu-wind");
+  var job = e.options[e.selectedIndex].value;
+  var jobTitle = e.options[e.selectedIndex].text;
+  var test = '<img class="job-icon" src="images/wind/' + job + '.gif">'
+  $("#wind-job-img").html(test)
+  $("#wind-job-text").text(jobTitle)
+}
+
+function myFunction2() {
+  var e = document.getElementById("class-menu-water");
+  var job = e.options[e.selectedIndex].value;
+  var jobTitle = e.options[e.selectedIndex].text;
+  var test = '<img class="job-icon" src="images/water/' + job + '.gif">'
+  $("#water-job-img").html(test)
+  $("#water-job-text").text(jobTitle)
+}
+
+function myFunction3() {
+  var e = document.getElementById("class-menu-fire");
+  var job = e.options[e.selectedIndex].value;
+  var jobTitle = e.options[e.selectedIndex].text;
+  var test = '<img class="job-icon" src="images/fire/' + job + '.gif">'
+  $("#fire-job-img").html(test)
+  $("#fire-job-text").text(jobTitle)
+}
+
+function myFunction4() {
+  var e = document.getElementById("class-menu-earth");
+  var job = e.options[e.selectedIndex].value;
+  var jobTitle = e.options[e.selectedIndex].text;
+  var test = '<img class="job-icon" src="images/earth-1/' + job + '.gif"><img class="job-icon" src="images/earth-2/' + job + '.gif">'
+  $("#earth-job-img").html(test)
+  $("#earth-job-text").text(jobTitle)
+}
+</script>
